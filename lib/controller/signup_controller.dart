@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:myapp/models/signup1.dart';
 import 'package:myapp/models/signup2.dart';
 import 'package:myapp/models/signup3.dart';
+import 'package:myapp/models/social.dart';
 
 class SignUpController extends GetxController {
   // Observables to store the state
@@ -22,6 +23,12 @@ class SignUpController extends GetxController {
   ).obs;
 
   var verification = Verification().obs;
+  
+  var socialLoginInfo = SocialLoginInfo(
+    type: '',
+    socialId: '',
+    deviceToken: '',
+  ).obs;
 
   // Method to update SignUp data
   void updateSignUpData({
@@ -65,6 +72,19 @@ class SignUpController extends GetxController {
       val?.fileName = fileName;
     });
   }
+  
+  // Method to update SocialLoginInfo data
+  void updateSocialLoginInfo({
+    required String loginType,
+    required String socialId,
+    required String deviceToken,
+  }) {
+    socialLoginInfo.update((val) {
+      val?.type = loginType;
+      val?.socialId = socialId;
+      val?.deviceToken = deviceToken;
+    });
+  }
 
   // Method to get all data combined
   Map<String, dynamic> getAllData() {
@@ -72,6 +92,7 @@ class SignUpController extends GetxController {
       'sign_up': signUpData.value.toJson(),
       'farm_info': farmInfo.value.toJson(),
       'verification': verification.value.toJson(),
+      'social_login_info': socialLoginInfo.value.toJson(),
     };
   }
 
@@ -94,5 +115,11 @@ class SignUpController extends GetxController {
     );
 
     verification.value = Verification();
+
+    socialLoginInfo.value = SocialLoginInfo(
+      type: '',
+      socialId: '',
+      deviceToken: '',
+    );
   }
 }

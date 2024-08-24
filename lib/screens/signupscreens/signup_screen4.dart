@@ -70,7 +70,9 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 50,),
+                  const SizedBox(
+                    height: 50,
+                  ),
                   const Text(
                     'Signup 4 of 4',
                     style: TextStyle(
@@ -170,11 +172,9 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
                                     farmInfo: controller.farmInfo.value,
                                     verification: controller.verification.value,
                                     businessHours: businessHours,
-                                    deviceToken:
-                                        "0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx", // Hardcoded
-                                    type: "email", // Hardcoded
-                                    socialId:
-                                        "0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx", // Hardcoded
+                                    socialLoginInfo:
+                                        controller.socialLoginInfo.value,
+                                    // Hardcoded
                                   );
 
                                   final apiService = ApiService();

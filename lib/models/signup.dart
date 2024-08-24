@@ -2,24 +2,23 @@ import 'package:myapp/models/signup1.dart';
 import 'package:myapp/models/signup2.dart';
 import 'package:myapp/models/signup3.dart';
 import 'package:myapp/models/signup4.dart';
+import 'package:myapp/models/social.dart';
 
 class SuperModel {
   final SignUp signUp;
   final FarmInfo farmInfo;
   final Verification verification;
   final BusinessHours businessHours;
-  final String deviceToken;
-  final String type;
-  final String socialId;
+
+  final SocialLoginInfo socialLoginInfo;
+
 
   SuperModel({
     required this.signUp,
     required this.farmInfo,
     required this.verification,
     required this.businessHours,
-    required this.deviceToken,
-    required this.type,
-    required this.socialId,
+    required this.socialLoginInfo,
   });
 
   Map<String, dynamic> toJson() {
@@ -37,9 +36,9 @@ class SuperModel {
       'zip_code': farmInfo.zipCode,
       'registration_proof': verification.fileName,
       'business_hours': businessHours.toJson(),
-      'device_token': deviceToken,
-      'type': type,
-      'social_id': socialId,
+      'device_token': socialLoginInfo.deviceToken,
+      'type': socialLoginInfo.type,
+      'social_id': socialLoginInfo.socialId,
     };
   }
 }

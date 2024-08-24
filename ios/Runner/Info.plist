@@ -3,6 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
+	<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>1654949452014228</string>
+    </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>1654949452014228</string>
+<key>FacebookDisplayName</key>
+<string>myapp</string>
+
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Myapp</string>

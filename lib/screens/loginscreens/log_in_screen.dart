@@ -1,3 +1,5 @@
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:myapp/api/API.dart';
 import 'package:myapp/screens/loginscreens/forget_password_screen.dart';
 import 'package:myapp/screens/home_screen.dart';
 import 'package:myapp/screens/signupscreens/signup_screen.dart';
@@ -14,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  ApiService apiService = ApiService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final bool _isLoading = false;
@@ -23,14 +26,6 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _errorMessage = '';
     });
-  }
-
-  Future<void> _googleLogin() async {
-    // Implement Google login logic here
-  }
-
-  void _navigateToHome() {
-    Get.to(() => const HomeScreen());
   }
 
   void _navigateSignUp() {
@@ -198,14 +193,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     IconButton(
                       icon: const Icon(FontAwesomeIcons.google,
                           color: Colors.red),
-                      onPressed: _googleLogin,
+                      onPressed: apiService.signInWithGoogle,
                       iconSize: 40,
                     ),
                     IconButton(
                       icon: const Icon(FontAwesomeIcons.apple,
                           color: Colors.black),
                       onPressed: () {
-                        // Apple login logic
+                        apiService.signInWithApple();
                       },
                       iconSize: 40,
                     ),
@@ -213,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       icon: const Icon(FontAwesomeIcons.facebook,
                           color: Colors.blue),
                       onPressed: () {
-                        // Facebook login logic
+                        apiService.signInWithFacebook(context);
                       },
                       iconSize: 40,
                     ),

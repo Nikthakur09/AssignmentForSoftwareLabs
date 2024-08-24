@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "427911948085",
+    "project_id": "softwarelabs-10ce2",
+    "storage_bucket": "softwarelabs-10ce2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427911948085:android:b17c289b24449631550e7c",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQAk1LYomLpsfz4WuxkfaZtFSrlCHvD64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427911948085:android:7db4aba6056132d3550e7c",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQAk1LYomLpsfz4WuxkfaZtFSrlCHvD64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
